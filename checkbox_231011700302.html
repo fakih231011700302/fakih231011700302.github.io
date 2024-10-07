@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survei Minat Baca</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">Survei Minat Baca</h2>
+
+        <!-- Alert Sukses -->
+        <div id="alert-success" class="alert alert-success d-none" role="alert">
+            Terima kasih! Survei minat baca Anda telah berhasil dikirim.
+        </div>
+
+        <form id="survey-form">
+            <!-- Pertanyaan 1: Genre Buku -->
+            <div class="mb-4">
+                <label class="form-label">Genre buku apa yang Anda sukai?</label><br>
+                <!-- Checkbox Options -->
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fiksi" name="genre" value="fiksi">
+                    <label class="form-check-label" for="fiksi">Fiksi</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="nonFiksi" name="genre" value="nonFiksi">
+                    <label class="form-check-label" for="nonFiksi">Non-Fiksi</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sains" name="genre" value="sains">
+                    <label class="form-check-label" for="sains">Sains</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sejarah" name="genre" value="sejarah">
+                    <label class="form-check-label" for="sejarah">Sejarah</label>
+                </div>
+            </div>
+
+            <!-- Pertanyaan 2: Jumlah Buku yang Dibaca -->
+            <div class="mb-4">
+                <label class="form-label">Berapa buku yang Anda baca dalam sebulan?</label><br>
+                <!-- Radio Button Options -->
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="1-3" name="jumlahBuku" value="1-3" required>
+                    <label class="form-check-label" for="1-3">1-3</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="4-6" name="jumlahBuku" value="4-6">
+                    <label class="form-check-label" for="4-6">4-6</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" id="7+" name="jumlahBuku" value="7+">
+                    <label class="form-check-label" for="7+">7+</label>
+                </div>
+            </div>
+
+            <!-- Tombol Submit -->
+            <button type="submit" class="btn btn-primary">Kirim</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript untuk menampilkan alert -->
+    <script>
+        document.getElementById('survey-form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Mencegah pengiriman form secara default
+
+            // Menampilkan alert sukses
+            var alertSuccess = document.getElementById('alert-success');
+            alertSuccess.classList.remove('d-none'); // Menghapus class d-none untuk menampilkan alert
+
+            // Mengosongkan form setelah submit
+            document.getElementById('survey-form').reset();
+        });
+    </script>
+</body>
+
+</html>
